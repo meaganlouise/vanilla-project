@@ -20,16 +20,31 @@ h1 {
 }
 
 h2 {
-  font-size: 64px;
+  font-size: 58px;
   font-family: "Pacifico", cursive;
   display: inline;
-  line-height: 30px;
+  line-height: 0px;
   padding: 40px 0px;
   transition: 200ms ease-in-out;
+  position: relative;
+  left: -45px;
 }
 
 h2:hover {
   color: #fdffae;
+}
+
+h4 {
+  font-family: "Fredoka One", cursive;
+}
+
+.date {
+  font-family: "Fredoka One", cursive;
+  font-size: 22px;
+  position: relative;
+  bottom: -20px;
+  left: -20px;
+  font-weight: 100;
 }
 
 .hellokittyRain {
@@ -46,10 +61,12 @@ h2:hover {
 }
 
 .weatherTime {
-  font-size: 23px;
+  font-size: 20px;
   color: black;
   line-height: 30px;
   font-family: "Fredoka One", cursive;
+  position: relative;
+  right: -131px;
 }
 
 .btn-light {
@@ -84,6 +101,17 @@ h2:hover {
   background-color: black;
   cursor: pointer;
 }
+.condition {
+  font-family: "Fredoka One", cursive;
+  text-align: left;
+  position: relative;
+  right: 231px;
+  font-size: 28px;
+}
+
+.condition:first-letter {
+  text-transform: capitalize;
+}
 
 .searchBar {
   border-radius: 20px;
@@ -99,4 +127,6 @@ h2:hover {
 footer {
   text-align: center;
   margin: 0 auto;
+  position: relative;
+  bottom: -78px;
 }
