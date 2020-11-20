@@ -28,6 +28,9 @@ function displayWeatherCondition(response) {
   document.querySelector("#temperature").innerHTML = Math.round(
     response.data.main.temp
   );
+  document.querySelector("#condition").innerHTML =
+    response.data.weather[0].description;
+
   let icon = document.querySelector("#icon");
   icon.setAttribute("src", `src/images/${response.data.weather[0].icon}.png`);
 }
