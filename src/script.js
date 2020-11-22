@@ -24,10 +24,13 @@ function formatDate(date) {
 }
 
 function displayWeatherCondition(response) {
+  celsiusTemperature = response.data.main.temp;
+
   document.querySelector("#city").innerHTML = response.data.name;
   document.querySelector("#temperature").innerHTML = Math.round(
-    response.data.main.temp
+    celsiusTemperature
   );
+
   document.querySelector("#condition").innerHTML =
     response.data.weather[0].description;
 
@@ -61,10 +64,16 @@ function getCurrentLocation(event) {
 function convertToFahren(event) {
   event.preventDefault();
   let temperatureElement = document.querySelector("#temperature");
-  let temperature = temperatureElement.innerHTML;
-  temperature = Number(temperature);
-  temperatureElement.innerHTML = Math.round((temperature * 9) / 5 + 32);
+  let farenheiTemperature = (celsiusTemperature * 9) / 5 + 32;
+  temperatureElement.innerHTML = Math.round(farenheiTemperature);
 }
+
+function displayCelsius(event) {
+  event.preventDefault();
+  let temperatureElement = document.querySelector("#temperature");
+  temperatureElement.innerHTML = Math.round(celsiusTemperature);
+}
+let celsiusTemperature = null;
 
 let dateElement = document.querySelector("#date");
 let currentTime = new Date();
@@ -75,6 +84,9 @@ dateElement.innerHTML = formatDate(currentTime);
 let flink = document.querySelector("#flink");
 flink.addEventListener("click", convertToFahren);
 
+let celsiusLink = document.querySelector("#celsius-link");
+celsiusLink.addEventListener("click", displayCelsius);
+
 function showWeather(response) {
   let h1 = document.querySelector("h1");
   let temperature = Math.round(response.data.main.temp);
@@ -84,7 +96,5 @@ function showWeather(response) {
 
 let currentLocationButton = document.querySelector("#current-location");
 currentLocationButton.addEventListener("click", getCurrentLocation);
-
-let celsiusTemperature = null;
 
 searchCity("Tokyo");
