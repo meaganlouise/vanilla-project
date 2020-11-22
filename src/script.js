@@ -85,4 +85,6 @@ function showWeather(response) {
 let currentLocationButton = document.querySelector("#current-location");
 currentLocationButton.addEventListener("click", getCurrentLocation);
 
+let celsiusTemperature = null;
+
 searchCity("Tokyo");
