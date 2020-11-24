@@ -1,14 +1,6 @@
-function formatDate(date) {
-  let hours = currentTime.getHours();
-  if (hours < 10) {
-    hours = `0${hours}`;
-  }
-  let minutes = currentTime.getMinutes();
-  if (minutes < 10) {
-    minutes = `0${minutes}`;
-  }
+function formatDate(timestamp) {
+  let date = new Date(timestamp);
 
-  let dayIndex = currentTime.getDay();
   let days = [
     "Sunday",
     "Monday",
@@ -18,9 +10,22 @@ function formatDate(date) {
     "Friday",
     "Saturday",
   ];
-  let day = days[dayIndex];
+  let day = days[date.getDay()];
 
-  return `${day} ${hours}:${minutes}`;
+  return `${day} ${formatHours(timestamp)}`;
+}
+
+function formatHours(timestamp) {
+  let date = new Date(timestamp);
+  let hours = date.getHours();
+  if (hours < 10) {
+    hours = `0${hours}`;
+  }
+  let minutes = date.getMinutes();
+  if (minutes < 10) {
+    minutes = `0${minutes}`;
+  }
+  return `${hours}:${minutes}`;
 }
 
 function displayWeatherCondition(response) {
@@ -44,9 +49,9 @@ function displayForecast(response) {
 
   forecastElement.innerHTML = `
   <div class="row">
-                <div class="col">Mon </br>${Math.round(
-                  forecast.main.temp
-                )}°</div>
+                <div class="col">${formatHours(
+                  forecast.dt * 1000
+                )} </br>${Math.round(forecast.main.temp)}°</div>
                 <div class="col">Tues </br>12°☀️</div>
                 <div class="col">Wed</br>12°☀️</div>
                 <div class="col">Thurs</br>12°🌧</div>
