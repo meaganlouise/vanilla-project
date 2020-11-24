@@ -39,6 +39,20 @@ function displayWeatherCondition(response) {
 }
 function displayForecast(response) {
   let forecastElement = document.querySelector("#forecast");
+  let forecast = response.data.list[0];
+  console.log(forecast);
+
+  forecastElement.innerHTML = `
+  <div class="row">
+                <div class="col">Mon </br>${Math.round(
+                  forecast.main.temp
+                )}°</div>
+                <div class="col">Tues </br>12°☀️</div>
+                <div class="col">Wed</br>12°☀️</div>
+                <div class="col">Thurs</br>12°🌧</div>
+                <div class="col">Fri</br>12°🌦</div>
+              </div>
+            </div>`;
 
   console.log(response.data);
 }
