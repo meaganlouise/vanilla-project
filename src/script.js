@@ -51,7 +51,11 @@ function displayForecast(response) {
   <div class="row">
                 <div class="col">${formatHours(
                   forecast.dt * 1000
-                )} </br>${Math.round(forecast.main.temp)}°</div>
+                )} </br>${Math.round(
+    forecast.main.temp
+  )}°<img src="http://openweathermap.org/img/wn/${
+    forecast.weather[0].icon
+  }@2x.png"/></div>
                 <div class="col">Tues </br>12°☀️</div>
                 <div class="col">Wed</br>12°☀️</div>
                 <div class="col">Thurs</br>12°🌧</div>
