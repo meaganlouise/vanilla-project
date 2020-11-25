@@ -42,28 +42,27 @@ function displayWeatherCondition(response) {
   let icon = document.querySelector("#icon");
   icon.setAttribute("src", `src/images/${response.data.weather[0].icon}.png`);
 }
+
 function displayForecast(response) {
   let forecastElement = document.querySelector("#forecast");
-  let forecast = response.data.list[0];
-  console.log(forecast);
+  forecastElement.innerHTML = null;
+  let forecast = null;
 
-  forecastElement.innerHTML = `
-  <div class="row">
-                <div class="col">${formatHours(
-                  forecast.dt * 1000
-                )} </br>${Math.round(
-    forecast.main.temp
-  )}°<img src="http://openweathermap.org/img/wn/${
-    forecast.weather[0].icon
-  }@2x.png"/></div>
-                <div class="col">Tues </br>12°☀️</div>
-                <div class="col">Wed</br>12°☀️</div>
-                <div class="col">Thurs</br>12°🌧</div>
-                <div class="col">Fri</br>12°🌦</div>
-              </div>
-            </div>`;
-
-  console.log(response.data);
+  for (let index = 0; index < 5; index++) {
+    forecast = response.data.list[index];
+    forecastElement.innerHTML += `
+   
+    <div class="col">
+    ${formatHours(forecast.dt * 1000)}
+    </br>
+    ${Math.round(forecast.main.temp)}°
+      <img src="http://openweathermap.org/img/wn/${
+        forecast.weather[0].icon
+      }@2x.png"/>
+      </div>
+    </div>
+    `;
+  }
 }
 
 function searchCity(city) {
