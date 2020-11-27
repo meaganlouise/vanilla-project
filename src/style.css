@@ -20,14 +20,14 @@ h1 {
 }
 
 h2 {
-  font-size: 58px;
+  font-size: 43px;
   font-family: "Pacifico", cursive;
   display: inline;
   line-height: 0px;
-  padding: 40px 0px;
-  transition: 200ms ease-in-out;
   position: relative;
-  left: -45px;
+  left: -21px;
+
+  transition: 200ms ease-in-out;
 }
 
 h2:hover {
@@ -37,17 +37,17 @@ h2:hover {
 h4 {
   font-family: "Fredoka One", cursive;
 }
+h5 {
+  font-family: "Fredoka One", cursive;
+}
 
 img {
-  width: 40px;
+  width: 18px;
 }
 
 .date {
   font-family: "Fredoka One", cursive;
   font-size: 22px;
-  position: relative;
-  bottom: -20px;
-  left: -20px;
   font-weight: 100;
 }
 
@@ -69,8 +69,7 @@ img {
   color: black;
   line-height: 30px;
   font-family: "Fredoka One", cursive;
-  position: relative;
-  right: -112px;
+  margin: 0px 33px;
 }
 
 .btn-light {
@@ -108,9 +107,12 @@ img {
 .condition {
   font-family: "Fredoka One", cursive;
   text-align: left;
-  position: relative;
-  right: 179px;
-  font-size: 28px;
+  font-size: 23px;
+}
+
+button,
+input {
+  margin: 7px;
 }
 
 .condition:first-letter {

@@ -36,11 +36,16 @@ function displayWeatherCondition(response) {
     celsiusTemperature
   );
 
+  document.querySelector("#windspeed").innerHTML = Math.round(
+    response.data.wind.speed
+  );
   document.querySelector("#condition").innerHTML =
     response.data.weather[0].description;
 
   let icon = document.querySelector("#icon");
   icon.setAttribute("src", `src/images/${response.data.weather[0].icon}.png`);
+
+  console.log(response);
 }
 
 function displayForecast(response) {

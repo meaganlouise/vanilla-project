@@ -35,7 +35,7 @@
         <img class="hellokittyRain" id="icon" src="src/images/01d.png" />
         <h1>
           <span class="temperature" id="temperature">16</span
-          ><span class="units"
+          >°<span class="units"
             ><a href="#" id="celsius-link">c</a>|<a href="#" id="flink"
               >f</a
             ></span
@@ -44,45 +44,39 @@
 
         <div class="container">
           <div class="row">
-            <div class="col">
+            <div class="col-4">
               <h2 id="city">Tokyo</h2>
             </div>
-            <div class="condition" id="condition">
-              <h4>Clear Skies</h4>
+            <div class="col">
+            <div class="date" id="date">
+              <h3>Wednesday</h3>
             </div>
+          </div>
             <div class="row">
               <div class="col">
-                <h3 class="date" id="date"></h3>
-              </div>
-              <div class="row weatherTime" id="forecast" ></div>
-              
+                <h4 class="condition" id="condition"></h4>
+                 <h5 class="windspeed">Wind: <span id="windspeed"></span> mph</h5>
+                </div>
+                  <div class="row weatherTime" id="forecast"></div>
+                </div>
+                <div class="row">
+                
+                  
+            
+                  <div class="col">
+                  <form class="search-form" id="search-form" style="margin: 40px 10px 20px 0px;">
 
-          </div>
-          <div class="row">
-            <div class="col">
-              <form class="search-form" id="search-form">
-                <input
-                  type="text"
-                  id="city-input"
-                  placeholder="  Enter City Here 🌴"
-                  class="searchBar"
-                />
-                <input type="submit" value="Search" class="btn btn-light" />
-                <span
-                  ><button
-                    type="button"
-                    class="btn btn-success"
-                    id="current-location"
-                  >
-                    Current
-                  </button></span
-                >
-              </form>
+                        <input type="text" id="city-input" placeholder="  Enter City Here 🌴" class="searchBar" /><input type="submit" value="Search" class="btn btn-light" /><button type="button" class="btn btn-success" id="current-location">
+                            Current
+                          </button>
+                      </form>
+                    </div>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-    </div>
+              
+          
     <script script src="src/script.js"></script>
   </body>
 
