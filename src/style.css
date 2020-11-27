@@ -40,6 +40,8 @@ h4 {
 }
 h5 {
   font-family: "Fredoka One", cursive;
+  position: relative;
+  top: -5px;
 }
 
 img {
