@@ -15,6 +15,8 @@
       href="https://fonts.googleapis.com/css2?family=Balsamiq+Sans&family=Courier+Prime&family=Josefin+Sans&display=swap"
       rel="stylesheet"
     />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+
     <link
       href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap"
       rel="stylesheet"
@@ -23,9 +25,11 @@
       href="https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap"
       rel="stylesheet"
     />
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Baloo+2&family=Comfortaa&family=Poppins&display=swap"
-      rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Baloo+2&family=Comfortaa&family=Poppins&display=swap"
+      rel="stylesheet"
+    />
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
   </head>
 
@@ -34,8 +38,8 @@
       <div class="container">
         <img class="hellokittyRain" id="icon" src="src/images/01d.png" />
         <h1>
-          <span class="temperature" id="temperature">16</span
-          >°<span class="units"
+          <span class="temperature" id="temperature">16</span>°<span
+            class="units"
             ><a href="#" id="celsius-link">c</a>|<a href="#" id="flink"
               >f</a
             ></span
@@ -47,36 +51,45 @@
             <div class="col-4">
               <h2 id="city">Tokyo</h2>
             </div>
-            <div class="col">
-            <div class="date" id="date">
-              <h3>Wednesday</h3>
-            </div>
           </div>
-            <div class="row">
-              <div class="col">
-                <h4 class="condition" id="condition"></h4>
-                 <h5 class="windspeed">Wind: <span id="windspeed"></span> mph</h5>
-                </div>
-                  <div class="row weatherTime" id="forecast"></div>
-                </div>
-                <div class="row">
-                
-                  
-            
-                  <div class="col">
-                  <form class="search-form" id="search-form" style="margin: 40px 10px 20px 0px;">
-
-                        <input type="text" id="city-input" placeholder="  Enter City Here 🌴" class="searchBar" /><input type="submit" value="Search" class="btn btn-light" /><button type="button" class="btn btn-success" id="current-location">
-                            Current
-                          </button>
-                      </form>
-                    </div>
-              </div>
+          <div class="row">
+            <div class="col">
+              <div class="date" id="date"></div>
+              <h4 class="condition" id="condition"></h4>
+              <h5 class="windspeed">Wind: <span id="windspeed"></span> mph</h5>
+            </div>
+            <div class="row weatherTime" id="forecast"></div>
+          </div>
+          <div class="row">
+            <div class="col">
+              <form
+                class="search-form"
+                id="search-form"
+                style="margin: 40px 10px 20px 0px"
+              >
+                <input
+                  type="text"
+                  id="city-input"
+                  placeholder="  Enter City Here 🌴"
+                  class="searchBar"
+                /><input
+                  type="submit"
+                  value="Search"
+                  class="btn btn-light"
+                /><button
+                  type="button"
+                  class="btn btn-success"
+                  id="current-location"
+                >
+                  Current
+                </button>
+              </form>
             </div>
           </div>
         </div>
-              
-          
+      </div>
+    </div>
+
     <script script src="src/script.js"></script>
   </body>
 

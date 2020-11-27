@@ -20,12 +20,13 @@ h1 {
 }
 
 h2 {
-  font-size: 43px;
+  font-size: 55px;
   font-family: "Pacifico", cursive;
   display: inline;
-  line-height: 0px;
+  line-height: 16px;
   position: relative;
-  left: -21px;
+  left: -10px;
+  top: -26px;
 
   transition: 200ms ease-in-out;
 }
@@ -107,7 +108,7 @@ img {
 .condition {
   font-family: "Fredoka One", cursive;
   text-align: left;
-  font-size: 23px;
+  font-size: 22px;
 }
 
 button,
@@ -132,7 +133,8 @@ input {
 
 footer {
   text-align: center;
-  margin: 0 auto;
-  position: relative;
-  bottom: -78px;
+  margin: 40px;
+
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  font-size: 14px;
 }
