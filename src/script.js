@@ -29,6 +29,9 @@ function formatHours(timestamp) {
 }
 
 function displayWeatherCondition(response) {
+  let currentLocationButton = document.querySelector("#current-location");
+  currentLocationButton.addEventListener("click", getCurrentLocation);
+
   celsiusTemperature = response.data.main.temp;
 
   document.querySelector("#city").innerHTML = response.data.name;
@@ -89,6 +92,8 @@ function searchLocation(position) {
   let apiKey = "d7a6e9ae202ed10b9845b2800ff1ad9c";
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${position.coords.latitude}&lon=${position.coords.longitude}&appid=${apiKey}&units=metric`;
   axios.get(apiUrl).then(displayWeatherCondition);
+  apiUrl = `https://api.openweathermap.org/data/2.5/forecast?lat=${position.coords.latitude}&lon=${position.coords.longitude}&appid=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(displayForecast);
 }
 
 function getCurrentLocation(event) {
@@ -108,6 +113,7 @@ function displayCelsius(event) {
   let temperatureElement = document.querySelector("#temperature");
   temperatureElement.innerHTML = Math.round(celsiusTemperature);
 }
+
 let celsiusTemperature = null;
 
 let dateElement = document.querySelector("#date");
@@ -128,8 +134,5 @@ function showWeather(response) {
 
   h1.innerHTML = `${temperature}°`;
 }
-
-let currentLocationButton = document.querySelector("#current-location");
-currentLocationButton.addEventListener("click", getCurrentLocation);
 
 searchCity("Tokyo");
